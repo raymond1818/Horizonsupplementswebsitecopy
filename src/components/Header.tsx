@@ -4,7 +4,9 @@ import { useCart } from '../contexts/CartContext';
 import { useLanguage, Language } from '../contexts/LanguageContext';
 import { CartSheet } from './CartSheet';
 import { SearchDialog } from './SearchDialog';
-import horizonLogo from 'figma:asset/d4120301abf46d14c5655b505d77f781bdaf5ce1.png';
+{/* If you want to change the logo that appears at the top of your website, just change
+  the "bingus.webp" below to whatever your logo name is. i.e., "logo.png" */}
+import horizonLogo from '../assets/bingus.webp';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -26,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           <div className="flex justify-between items-center h-20">
             {/* Left Nav - Desktop */}
             <nav className="hidden lg:flex items-center gap-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('supplements')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -36,14 +38,14 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <ChevronDown className="w-3 h-3" />
                 </button>
                 {activeDropdown === 'supplements' && (
-                  <div 
+                  <div
                     className="absolute top-full left-0 pt-4"
                   >
                     <div className="w-[280px] bg-white shadow-xl p-6">
                       <ul className="space-y-3 text-sm">
                         <li>
-                          <button 
-                            onClick={() => onNavigate('home')} 
+                          <button
+                            onClick={() => onNavigate('home')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-coral)'}
@@ -53,8 +55,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
-                            onClick={() => onNavigate('products')} 
+                          <button
+                            onClick={() => onNavigate('products')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-purple)'}
@@ -64,8 +66,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
-                            onClick={() => onNavigate('allnew')} 
+                          <button
+                            onClick={() => onNavigate('allnew')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-coral)'}
@@ -75,8 +77,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li className="border-t border-gray-200 pt-3 mt-3">
-                          <button 
-                            onClick={() => onNavigate('products')} 
+                          <button
+                            onClick={() => onNavigate('products')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-cyan)'}
@@ -86,8 +88,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
-                            onClick={() => onNavigate('products')} 
+                          <button
+                            onClick={() => onNavigate('products')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-peach)'}
@@ -101,8 +103,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   </div>
                 )}
               </div>
-              
-              <button 
+
+              <button
                 onClick={() => onNavigate('allnew')}
                 className="text-sm tracking-wide transition-all"
                 style={{ color: 'inherit' }}
@@ -118,16 +120,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               onClick={() => onNavigate('home')}
               className="absolute left-1/2 transform -translate-x-1/2 hover:opacity-80 transition-opacity"
             >
-              <img 
-                src={horizonLogo} 
-                alt="Horizon Supplements" 
+              <img
+                src={horizonLogo}
+                alt="Horizon Supplements"
                 className="h-24 w-auto"
               />
             </button>
 
             {/* Right Nav - Desktop */}
             <div className="hidden lg:flex items-center gap-6">
-              <button 
+              <button
                 onClick={() => onNavigate('athletes')}
                 className="text-sm tracking-wide transition-all"
                 style={{ color: 'inherit' }}
@@ -136,9 +138,9 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               >
                 {t.athletes}
               </button>
-              
+
               {/* Language Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('language')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -152,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     <div className="w-[200px] bg-white shadow-xl p-4">
                       <ul className="space-y-2 text-sm">
                         <li>
-                          <button 
+                          <button
                             onClick={() => setLanguage('en')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: language === 'en' ? 'var(--miami-coral)' : 'inherit' }}
@@ -163,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
+                          <button
                             onClick={() => setLanguage('fr')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: language === 'fr' ? 'var(--miami-cyan)' : 'inherit' }}
@@ -174,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
+                          <button
                             onClick={() => setLanguage('zh')}
                             className="w-full text-left py-2 transition-all hover:pl-2"
                             style={{ color: language === 'zh' ? 'var(--miami-purple)' : 'inherit' }}
@@ -191,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
 
               {/* Contact Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('contact')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -205,8 +207,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     <div className="w-[240px] bg-white shadow-xl p-4">
                       <ul className="space-y-2 text-sm">
                         <li>
-                          <a 
-                            href="mailto:support@horizonsupplements.com" 
+                          <a
+                            href="mailto:support@horizonsupplements.com"
                             className="flex items-center gap-3 py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-coral)'}
@@ -217,8 +219,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </a>
                         </li>
                         <li>
-                          <a 
-                            href="tel:+1234567890" 
+                          <a
+                            href="tel:+1234567890"
                             className="flex items-center gap-3 py-2 transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-cyan)'}
@@ -229,7 +231,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </a>
                         </li>
                         <li>
-                          <button 
+                          <button
                             className="flex items-center gap-3 py-2 w-full text-left transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-purple)'}
@@ -240,7 +242,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                           </button>
                         </li>
                         <li>
-                          <button 
+                          <button
                             className="flex items-center gap-3 py-2 w-full text-left transition-all hover:pl-2"
                             style={{ color: 'inherit' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-peach)'}
@@ -257,7 +259,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
 
               {/* Search Icon */}
-              <button 
+              <button
                 onClick={() => setIsSearchOpen(true)}
                 className="hover:opacity-60 transition-opacity"
               >
@@ -283,7 +285,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             </button>
 
             {/* Mobile Cart */}
-            <button 
+            <button
               className="lg:hidden relative hover:opacity-60 transition-opacity"
               onClick={() => setIsCartOpen(true)}
             >
@@ -302,7 +304,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           <div className="lg:hidden border-t border-white/20 backdrop-blur-md" style={{ background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(251, 146, 60, 0.12) 100%), rgba(255, 255, 255, 0.9)' }}>
             <div className="px-4 py-6 space-y-4">
               <div>
-                <button 
+                <button
                   className="w-full text-left text-sm tracking-wide py-2"
                   onClick={() => {
                     setActiveDropdown(activeDropdown === 'supplements-mobile' ? null : 'supplements-mobile');
@@ -317,8 +319,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <div className="pl-4 pt-3 space-y-2">
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <button 
-                          onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }} 
+                        <button
+                          onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }}
                           className="w-full text-left py-1.5 transition-all hover:pl-2"
                           style={{ color: 'inherit' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-coral)'}
@@ -328,8 +330,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
-                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }} 
+                        <button
+                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }}
                           className="w-full text-left py-1.5 transition-all hover:pl-2"
                           style={{ color: 'inherit' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-purple)'}
@@ -339,8 +341,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
-                          onClick={() => { onNavigate('allnew'); setIsMobileMenuOpen(false); }} 
+                        <button
+                          onClick={() => { onNavigate('allnew'); setIsMobileMenuOpen(false); }}
                           className="w-full text-left py-1.5 transition-all hover:pl-2"
                           style={{ color: 'inherit' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-coral)'}
@@ -350,8 +352,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
-                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }} 
+                        <button
+                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }}
                           className="w-full text-left py-1.5 transition-all hover:pl-2"
                           style={{ color: 'inherit' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-cyan)'}
@@ -361,8 +363,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
-                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }} 
+                        <button
+                          onClick={() => { onNavigate('products'); setIsMobileMenuOpen(false); }}
                           className="w-full text-left py-1.5 transition-all hover:pl-2"
                           style={{ color: 'inherit' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--miami-peach)'}
@@ -375,24 +377,24 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   </div>
                 )}
               </div>
-              
-              <button 
+
+              <button
                 onClick={() => { onNavigate('allnew'); setIsMobileMenuOpen(false); }}
                 className="block w-full text-left text-sm tracking-wide py-2"
               >
                 {t.allNew}
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => { onNavigate('athletes'); setIsMobileMenuOpen(false); }}
                 className="block w-full text-left text-sm tracking-wide py-2"
               >
                 {t.athletes}
               </button>
-              
+
               {/* Contact Dropdown Mobile */}
               <div>
-                <button 
+                <button
                   className="w-full text-left text-sm tracking-wide py-2"
                   onClick={() => {
                     setActiveDropdown(activeDropdown === 'contact-mobile' ? null : 'contact-mobile');
@@ -437,7 +439,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
               {/* Language Dropdown Mobile */}
               <div>
-                <button 
+                <button
                   className="w-full text-left text-sm tracking-wide py-2"
                   onClick={() => {
                     setActiveDropdown(activeDropdown === 'language-mobile' ? null : 'language-mobile');
@@ -455,7 +457,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <div className="pl-4 pt-3 space-y-2">
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <button 
+                        <button
                           onClick={() => { setLanguage('en'); setActiveDropdown(null); }}
                           className="w-full text-left py-1.5"
                           style={{ color: language === 'en' ? 'var(--miami-coral)' : 'inherit' }}
@@ -464,7 +466,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
+                        <button
                           onClick={() => { setLanguage('fr'); setActiveDropdown(null); }}
                           className="w-full text-left py-1.5"
                           style={{ color: language === 'fr' ? 'var(--miami-cyan)' : 'inherit' }}
@@ -473,7 +475,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         </button>
                       </li>
                       <li>
-                        <button 
+                        <button
                           onClick={() => { setLanguage('zh'); setActiveDropdown(null); }}
                           className="w-full text-left py-1.5"
                           style={{ color: language === 'zh' ? 'var(--miami-purple)' : 'inherit' }}
@@ -487,7 +489,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
 
               {/* Search Mobile */}
-              <button 
+              <button
                 onClick={() => { setIsSearchOpen(true); setIsMobileMenuOpen(false); }}
                 className="flex items-center gap-2 text-sm tracking-wide py-2"
               >
