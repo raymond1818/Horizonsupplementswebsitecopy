@@ -6,7 +6,7 @@ import { CartSheet } from './CartSheet';
 import { SearchDialog } from './SearchDialog';
 {/* If you want to change the logo that appears at the top of your website, just change
   the "bingus.webp" below to whatever your logo name is. i.e., "logo.png" */}
-import horizonLogo from '../assets/bingus.webp';
+import horizonLogo from '../assets/logo.png';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -123,7 +123,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               <img
                 src={horizonLogo}
                 alt="Horizon Supplements"
-                className="h-24 w-auto"
+                className="h-24 w-auto transition-transform hover:scale-110"
               />
             </button>
 
